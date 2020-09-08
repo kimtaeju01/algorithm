@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1582268388 source:c:\users\win10\onedrive\바탕 화면\알고리즘\정수론\pass486.cpp
+	<iostream>
+	<math.h>
+	<vector>
+

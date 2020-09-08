@@ -1,0 +1,11 @@
+# depslib dependency file v1.0
+1514140574 source:c:\users\win10\desktop\알고리즘\조합\main.cpp
+	<iostream>
+
+1581305412 source:c:\users\win10\desktop\알고리즘\조합\boardcover2.cpp
+	<iostream>
+	<vector>
+
+1581398406 source:c:\users\win10\desktop\알고리즘\조합\allergy.cpp
+	<iostream>
+

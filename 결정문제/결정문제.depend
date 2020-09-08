@@ -1,0 +1,8 @@
+# depslib dependency file v1.0
+1581475162 source:c:\users\win10\desktop\알고리즘\결정문제\arctic.cpp
+	<iostream>
+
+1581911794 source:c:\users\win10\desktop\알고리즘\결정문제\canada.cpp
+	<iostream>
+	<algorithm>
+

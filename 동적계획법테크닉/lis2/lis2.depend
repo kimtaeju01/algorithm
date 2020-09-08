@@ -1,0 +1,13 @@
+# depslib dependency file v1.0
+1579502342 source:c:\users\win10\desktop\알고리즘\동적계획법테크닉\lis2\klis.cpp
+	<iostream>
+	<list>
+
+1579760448 source:c:\users\win10\desktop\알고리즘\동적계획법테크닉\lis2\dragon.cpp
+	<iostream>
+	<string>
+
+1580192378 source:c:\users\win10\desktop\알고리즘\동적계획법테크닉\lis2\zimbabwe.cpp
+	<iostream>
+	<string>
+

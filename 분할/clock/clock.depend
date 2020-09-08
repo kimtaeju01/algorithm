@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1577672861 source:c:\users\win10\desktop\clock\main.c
+	<stdio.h>
+	<stdlib.h>
+
