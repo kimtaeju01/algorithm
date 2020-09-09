@@ -2,17 +2,37 @@
 
 using namespace std;
 
-int r[4] = {0, 1, 11, 0};    //ê³¼ëª©ì— ëŒ€í•œ ì •ë³´
-int c[4] = {15, 15, 11, 15}; //í•™ê¸°ì— ëŒ€í•œ ì •ë³´
-int n = 4;                   //ì „ê³µê³¼ëª©ìˆ˜
-int m = 4;                   //ë“¤ì–´ì•¼í•˜ëŠ” ê³¼ëª© ìˆ˜
-int k = 4;                   //í•™ê¸° ìˆ˜
-int l = 4;                   //í•œ í•™ê¸°ì— ë“¤ì„ ìˆ˜ ìˆëŠ” ìµœëŒ€ ê³¼ëª© ìˆ˜
-int cache[4] = {0};
+int r[4][4] = {{0,0,0,0},{1,0,0,0},{1,1,0,1},{0,0,0,0}};    //°ú¸ñ¿¡ ´ëÇÑ Á¤º¸
+int c[4][4] = {{1,1,1,1},{1,1,1,1},{1,1,0,1},{1,1,1,1}}; //ÇĞ±â¿¡ ´ëÇÑ Á¤º¸
+int INF = 987654321;
+int n = 4;                   //Àü°ø°ú¸ñ¼ö
+int m = 4;                   //µé¾î¾ßÇÏ´Â °ú¸ñ ¼ö
+int k = 4;                   //ÇĞ±â ¼ö
+int l = 4;                   //ÇÑ ÇĞ±â¿¡ µéÀ» ¼ö ÀÖ´Â ÃÖ´ë °ú¸ñ ¼ö
+int bitCount(int n);
+int graduate(int semester, int taken) {
+    if(bitCount(taken) >= k) return 0;
+    if(semester == m) return INF;
+
+    int& ret = cache[semester][taken];
+    if(ret != -1) return ret;
+    ret = INF;
+    int canTake = (classes[semester] & ~taken); //µéÀ» ¼ö ÀÖ´Â °ú¸ñ Áß
+
+    for(int i=0;i<n;i++){
+        if((canTake&(1<<i))&&(taken&prerequisite[i])!= prerequisite[i]) canTake &= ~(1<<i);
+    }
+    for(int take = canTake;take>0;take=((take-1)&canTake)){
+        if(bitCount(take)>l) continue;
+        ret = min(ret, graduate(semester+1, taken|take)+1);
+    }
+    ret = min(ret, graduate(semester+1,taken));
+    return ret;
+}
 
 int main()
 {
-    int fin[4] = {0, 0, 0, 0};
-    cout << graduation(0, fin);
+    int status[4] = {0, 0, 0, 0};
+    cout << graduation(0, status);
     return 0;
 }
